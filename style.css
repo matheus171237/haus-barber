@@ -1,7 +1,6 @@
-/* =========================================
-   HAUS BARBER
-   STYLE.CSS
-========================================= */
+/* ==============================
+   RESET
+============================== */
 
 * {
     margin: 0;
@@ -13,23 +12,10 @@ html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --black: #050608;
-    --black-light: #0b0e12;
-    --blue: #071525;
-    --blue-light: #0d2035;
-    --red: #d71920;
-    --red-dark: #a70f15;
-    --gold: #c9a35b;
-    --white: #ffffff;
-    --gray: #a9afb8;
-    --gray-dark: #171b21;
-}
-
 body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    background: #050505;
+    color: #fff;
     overflow-x: hidden;
 }
 
@@ -38,39 +24,39 @@ a {
     text-decoration: none;
 }
 
-button,
-input,
-select {
-    font-family: inherit;
-}
-
 .container {
-    width: min(1150px, 90%);
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
 }
 
 
-/* =========================================
+/* ==============================
    HEADER
-========================================= */
+============================== */
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
+
+    background: rgba(5, 5, 5, 0.96);
+    border-bottom: 1px solid #222;
+
     z-index: 1000;
-    background: rgba(5, 6, 8, 0.92);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 .nav {
-    height: 82px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+
+/* LOGO */
 
 .logo {
     display: flex;
@@ -79,1126 +65,1018 @@ select {
 }
 
 .logo span {
-    font-family: 'Bebas Neue', sans-serif;
-    color: var(--red);
-    font-size: 25px;
-    letter-spacing: 2px;
+    color: #e50914;
+    font-size: 21px;
+    font-weight: 900;
 }
 
 .logo strong {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
 }
 
 .logo small {
-    color: var(--gold);
-    font-size: 7px;
-    letter-spacing: 4px;
     margin-top: 7px;
+    color: #b58b35;
+    font-size: 6px;
+    letter-spacing: 4px;
 }
 
-.menu {
+
+/* MENU */
+
+nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 34px;
 }
 
-.menu a {
-    font-size: 12px;
+nav a {
+    color: #ddd;
+    font-size: 13px;
     font-weight: 600;
-    color: #dfe2e6;
     transition: 0.3s;
 }
 
-.menu a:hover {
-    color: var(--gold);
+nav a:hover {
+    color: #e50914;
 }
 
-.menu-button {
-    background: var(--red);
-    padding: 13px 21px;
+.nav-agendar {
+    background: #e50914;
+    color: #fff !important;
+    padding: 16px 24px;
     border-radius: 4px;
 }
 
-.menu-button:hover {
-    background: var(--red-dark) !important;
-    color: white !important;
+.nav-agendar:hover {
+    background: #ff1723;
 }
 
-.menu-mobile {
+
+/* MENU MOBILE */
+
+.menu-btn {
     display: none;
-    border: 0;
+
     background: none;
+    border: none;
+
     color: white;
-    font-size: 23px;
+    font-size: 28px;
+
     cursor: pointer;
 }
 
 
-/* =========================================
+/* ==============================
    HERO
-========================================= */
+============================== */
 
 .hero {
     min-height: 100vh;
-    position: relative;
+
     display: flex;
     align-items: center;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(2,5,9,0.98) 0%,
-            rgba(2,5,9,0.88) 45%,
-            rgba(2,5,9,0.40) 100%
-        ),
-        url("imagens/fachada.jpg") center/cover no-repeat;
-}
+    padding: 120px 8% 80px;
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
+    position: relative;
+
     background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(229, 9, 20, 0.12),
+            transparent 35%
+        ),
         linear-gradient(
-            180deg,
-            rgba(0,0,0,0.4),
-            transparent 50%,
-            rgba(0,0,0,0.7)
+            120deg,
+            #050505,
+            #0b0b0b,
+            #050505
         );
 }
 
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    top: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(229, 9, 20, 0.05);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
 .hero-content {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+
     position: relative;
     z-index: 2;
-    padding-top: 80px;
 }
 
-.hero-text {
-    max-width: 650px;
-}
+.hero-label {
+    color: #e50914;
 
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--gold);
-    margin-bottom: 20px;
-}
+    font-size: 14px;
+    font-weight: 800;
 
-.badge span {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--red);
-    box-shadow: 0 0 15px var(--red);
+    letter-spacing: 6px;
+
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 9vw, 105px);
-    line-height: 0.86;
-    letter-spacing: 2px;
+    font-size: clamp(50px, 8vw, 100px);
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 35px;
 }
 
 .hero h1 span {
-    color: var(--red);
+    display: block;
+    color: #e50914;
 }
 
 .hero p {
-    color: #d4d7db;
-    max-width: 480px;
-    line-height: 1.7;
-    margin: 28px 0;
-    font-size: 15px;
+    max-width: 580px;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
+
+/* ==============================
+   BOTÕES
+============================== */
+
 .btn {
-    min-height: 52px;
-    padding: 0 24px;
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
-    gap: 10px;
+
+    min-height: 52px;
+
+    padding: 0 27px;
+
     border-radius: 4px;
+
+    font-size: 12px;
+
     font-weight: 800;
-    font-size: 11px;
-    letter-spacing: 0.7px;
+
+    letter-spacing: 0.5px;
+
     transition: 0.3s;
+
     cursor: pointer;
-    border: none;
 }
 
-.btn-primary {
-    background: var(--red);
-    color: white;
+.btn-red {
+    background: #e50914;
+    color: #fff;
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    background: #ef1c24;
-    box-shadow: 0 12px 30px rgba(215,25,32,0.25);
+.btn-red:hover {
+    background: #ff1a25;
+    transform: translateY(-2px);
 }
 
 .btn-outline {
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
+    border: 1px solid #555;
+    color: #fff;
 }
 
 .btn-outline:hover {
-    border-color: var(--gold);
-    color: var(--gold);
+    border-color: #e50914;
+    color: #e50914;
 }
 
-.hero-info {
-    display: flex;
-    gap: 25px;
-    margin-top: 45px;
-    flex-wrap: wrap;
+.btn-whatsapp {
+    background: #1faa59;
+    color: #fff;
 }
 
-.hero-info div {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    color: #b8bdc5;
-    font-size: 11px;
+.btn-whatsapp:hover {
+    background: #159447;
+    transform: translateY(-2px);
 }
 
-.hero-info i {
-    color: var(--gold);
-}
+
+/* SCROLL */
 
 .scroll-down {
     position: absolute;
+
     bottom: 30px;
     left: 50%;
-    transform: translateX(-50%);
-    color: var(--gold);
+
+    color: #e50914;
+
+    font-size: 30px;
+
     animation: bounce 1.5s infinite;
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translate(-50%, 0);
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
 
     50% {
-        transform: translate(-50%, 8px);
+        transform: translateY(8px);
     }
 }
 
 
-/* =========================================
-   HIGHLIGHTS
-========================================= */
-
-.highlights {
-    background: var(--blue);
-    border-top: 1px solid rgba(255,255,255,0.07);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.highlight {
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    padding: 28px 25px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-}
-
-.highlight:last-child {
-    border-right: none;
-}
-
-.highlight-icon {
-    width: 45px;
-    height: 45px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(201,163,91,0.4);
-    color: var(--gold);
-}
-
-.highlight strong {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 4px;
-}
-
-.highlight span {
-    color: var(--gray);
-    font-size: 10px;
-}
-
-
-/* =========================================
-   SECTIONS
-========================================= */
+/* ==============================
+   SEÇÕES
+============================== */
 
 .section {
-    padding: 110px 0;
+    padding: 110px 8%;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 55px;
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
 }
 
-.section-title > span,
-.section-mini-title {
-    color: var(--gold);
-    font-size: 10px;
+.section-title span {
+    color: #e50914;
+
+    font-size: 12px;
+
     font-weight: 800;
-    letter-spacing: 3px;
+
+    letter-spacing: 4px;
 }
 
 .section-title h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 58px;
-    letter-spacing: 1px;
-    margin: 8px 0;
+    margin-top: 15px;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+.section-title h2 strong {
+    color: #e50914;
 }
 
 .section-title p {
-    color: var(--gray);
-    font-size: 13px;
+    color: #888;
+
+    margin-top: 20px;
+
+    font-size: 15px;
 }
 
 
-/* =========================================
-   SERVICES
-========================================= */
+/* ==============================
+   SERVIÇOS
+============================== */
 
 .services-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
 }
 
 .service-card {
-    position: relative;
     padding: 35px 28px;
-    background: linear-gradient(
-        145deg,
-        #0d1117,
-        #080a0d
-    );
-    border: 1px solid rgba(255,255,255,0.07);
-    overflow: hidden;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    border-radius: 6px;
+
     transition: 0.3s;
 }
 
 .service-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(201,163,91,0.4);
+    transform: translateY(-5px);
+
+    border-color: #e50914;
 }
 
-.service-card i {
-    color: var(--gold);
-    font-size: 27px;
-    margin-bottom: 25px;
+.service-card.featured {
+    border-color: rgba(229, 9, 20, 0.6);
+}
+
+.service-icon {
+    color: #e50914;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
 }
 
 .service-card h3 {
     font-size: 18px;
-    margin-bottom: 10px;
+
+    margin-bottom: 12px;
 }
 
 .service-card p {
-    color: var(--gray);
-    line-height: 1.7;
-    font-size: 11px;
+    min-height: 50px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
 }
 
-.service-number {
-    position: absolute;
-    top: 15px;
-    right: 18px;
-    font-family: 'Bebas Neue', sans-serif;
-    color: rgba(255,255,255,0.05);
-    font-size: 55px;
+.service-card strong {
+    color: #e50914;
+
+    font-size: 18px;
 }
 
 
-/* =========================================
-   PRICES
-========================================= */
+/* ==============================
+   PREÇOS
+============================== */
 
 .prices-section {
-    background:
-        linear-gradient(rgba(7,21,37,0.96), rgba(7,21,37,0.96)),
-        url("imagens/precos.jpg") center/cover;
+    padding: 110px 8%;
+
+    background: #090909;
 }
 
-.price-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 900px;
+.price-box {
+    width: 90%;
+    max-width: 800px;
+
     margin: auto;
+
+    background: #050505;
+
+    border: 1px solid #252525;
+
+    padding: 10px 35px;
 }
 
-.price-column {
-    background: rgba(0,0,0,0.35);
-    padding: 15px 25px;
-    border: 1px solid rgba(255,255,255,0.07);
-}
-
-.price-item {
+.price-row {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 18px 5px;
-    border-bottom: 1px dashed rgba(255,255,255,0.13);
+
+    padding: 19px 0;
+
+    border-bottom: 1px solid #222;
 }
 
-.price-item:last-child {
+.price-row:last-child {
     border-bottom: none;
 }
 
-.price-item span {
-    color: #e3e5e8;
-    font-size: 12px;
-}
+.price-row span {
+    color: #ddd;
 
-.price-item strong {
-    color: var(--gold);
     font-size: 14px;
-    white-space: nowrap;
 }
 
-.price-item.featured strong {
-    color: var(--red);
-}
+.price-row strong {
+    color: #e50914;
 
-.price-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    font-size: 15px;
 }
 
 
-/* =========================================
-   GALLERY
-========================================= */
+/* ==============================
+   SOBRE
+============================== */
 
-.gallery {
+.about {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 14px;
-    height: 570px;
-}
 
-.gallery-main {
-    position: relative;
-    overflow: hidden;
-}
+    grid-template-columns: 1.2fr 0.8fr;
 
-.gallery-main img,
-.gallery-small img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.gallery-main:hover img,
-.gallery-small > div:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-label {
-    position: absolute;
-    left: 25px;
-    bottom: 25px;
-    background: rgba(0,0,0,0.8);
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.gallery-label span {
-    color: var(--red);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 17px;
-}
-
-.gallery-label strong {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-}
-
-.gallery-small {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 14px;
-}
-
-.gallery-small > div {
-    overflow: hidden;
-}
-
-
-/* =========================================
-   ABOUT
-========================================= */
-
-.about-section {
-    background: #080b0f;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
     gap: 80px;
+
     align-items: center;
+
+    max-width: 1200px;
+
+    margin: auto;
 }
 
-.about-image {
-    min-height: 460px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.75)
-        ),
-        url("imagens/fachada.jpg") center/cover;
-    border: 1px solid rgba(255,255,255,0.08);
-}
+.section-label {
+    color: #e50914;
 
-.about-image-box {
-    border: 1px solid var(--gold);
-    padding: 40px;
-    text-align: center;
-    background: rgba(0,0,0,0.45);
-}
+    font-size: 12px;
 
-.about-image-box span {
-    display: block;
-    color: var(--red);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 35px;
-}
+    font-weight: 800;
 
-.about-image-box strong {
-    display: block;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 55px;
-}
-
-.about-image-box small {
-    color: var(--gold);
-    font-size: 8px;
     letter-spacing: 4px;
 }
 
-.about-content h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 60px;
+.about h2 {
+    margin: 20px 0 25px;
+
+    font-size: clamp(38px, 5vw, 65px);
+
     line-height: 0.95;
-    margin: 14px 0 25px;
+
+    font-weight: 900;
 }
 
-.about-content h2 span {
-    color: var(--red);
+.about h2 span {
+    color: #e50914;
+
+    display: block;
 }
 
 .about-content p {
-    color: var(--gray);
-    font-size: 13px;
-    line-height: 1.9;
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
     margin-bottom: 15px;
 }
 
-.about-features {
-    margin-top: 30px;
-    display: grid;
-    gap: 12px;
+.about-content .btn {
+    margin-top: 20px;
 }
 
-.about-features div {
+.about-box {
+    min-height: 330px;
+
     display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
     align-items: center;
-    gap: 10px;
-    font-size: 12px;
-}
 
-.about-features i {
-    color: var(--gold);
-}
-
-
-/* =========================================
-   BOOKING
-========================================= */
-
-.booking-section {
-    padding: 100px 0;
     background:
         linear-gradient(
-            100deg,
-            #071525,
-            #050608
+            145deg,
+            #111,
+            #050505
         );
+
+    border: 1px solid #292929;
+
+    position: relative;
 }
 
-.booking-container {
-    display: grid;
-    grid-template-columns: 1fr 430px;
-    gap: 80px;
-    align-items: center;
+.about-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 35px;
+
+    width: 70px;
+    height: 3px;
+
+    background: #e50914;
 }
 
-.booking-text > span {
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 3px;
+.about-logo {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 0.8;
 }
 
-.booking-text h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 70px;
-    line-height: 0.9;
-    margin: 15px 0 25px;
+.about-logo span {
+    color: #e50914;
+
+    font-size: 45px;
+
+    font-weight: 900;
 }
 
-.booking-text h2 strong {
-    color: var(--red);
+.about-logo strong {
+    color: #fff;
+
+    font-size: 55px;
+
+    font-weight: 900;
 }
 
-.booking-text p {
-    color: var(--gray);
-    line-height: 1.7;
-    font-size: 13px;
-    max-width: 450px;
-}
+.about-box p {
+    margin-top: 25px;
 
-.booking-form {
-    padding: 35px;
-    background: #0c1015;
-    border: 1px solid rgba(255,255,255,0.08);
-}
+    color: #b58b35;
 
-.booking-form label {
-    display: block;
-    color: #dce0e4;
-    font-size: 10px;
-    font-weight: 700;
-    margin-bottom: 7px;
-    margin-top: 17px;
-}
-
-.booking-form label:first-child {
-    margin-top: 0;
-}
-
-.booking-form input,
-.booking-form select {
-    width: 100%;
-    height: 48px;
-    padding: 0 14px;
-    color: white;
-    background: #07090c;
-    border: 1px solid #252a31;
-    outline: none;
-    border-radius: 3px;
-}
-
-.booking-form input:focus,
-.booking-form select:focus {
-    border-color: var(--gold);
-}
-
-.booking-form select option {
-    background: #080a0d;
-}
-
-.btn-whatsapp {
-    width: 100%;
-    margin-top: 24px;
-    background: #159447;
-    color: white;
-}
-
-.btn-whatsapp:hover {
-    background: #1db954;
-}
-
-.booking-form small {
-    display: block;
-    color: #777e87;
-    text-align: center;
     font-size: 9px;
-    margin-top: 12px;
+
+    letter-spacing: 6px;
 }
 
 
-/* =========================================
-   LOCATION
-========================================= */
+/* ==============================
+   AGENDAMENTO
+============================== */
 
-.location-section {
-    background: #080b0f;
+.booking {
+    padding: 110px 8%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #110000,
+            #080808,
+            #110000
+        );
+
+    text-align: center;
 }
+
+.booking-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.booking-content > span {
+    color: #e50914;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.booking h2 {
+    margin: 20px 0;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.booking h2 strong {
+    display: block;
+
+    color: #e50914;
+}
+
+.booking p {
+    color: #999;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==============================
+   LOCALIZAÇÃO
+============================== */
 
 .location-grid {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 35px;
+
+    gap: 18px;
 }
 
 .location-card {
-    display: flex;
-    gap: 17px;
-    padding: 28px;
-    background: #0c1015;
-    border: 1px solid rgba(255,255,255,0.07);
+    text-align: center;
+
+    padding: 35px 25px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    border-radius: 5px;
 }
 
 .location-icon {
-    min-width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    background: rgba(201,163,91,0.08);
-    color: var(--gold);
+    font-size: 28px;
+
+    margin-bottom: 18px;
 }
 
 .location-card h3 {
-    font-size: 13px;
-    margin-bottom: 9px;
+    margin-bottom: 12px;
 }
 
 .location-card p {
-    color: #c3c7cd;
-    line-height: 1.7;
-    font-size: 11px;
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.6;
 }
 
 .location-card small {
     display: block;
-    color: #777f89;
-    line-height: 1.5;
-    font-size: 9px;
-    margin-top: 6px;
+
+    color: #666;
+
+    margin-top: 8px;
 }
 
-.location-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 700;
+.location-card strong {
+    display: block;
+
     margin-top: 10px;
+
+    color: #e50914;
 }
 
-.map-box {
-    min-height: 320px;
-    background:
-        linear-gradient(
-            rgba(3,8,14,0.88),
-            rgba(3,8,14,0.88)
-        ),
-        repeating-linear-gradient(
-            45deg,
-            #101820 0px,
-            #101820 2px,
-            #0c131b 2px,
-            #0c131b 8px
-        );
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(255,255,255,0.08);
+.location-card a {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #e50914;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.map-button {
     text-align: center;
-}
 
-.map-content {
-    max-width: 450px;
-    padding: 30px;
-}
-
-.map-content > i {
-    font-size: 30px;
-    color: var(--red);
-    margin-bottom: 12px;
-}
-
-.map-content h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px;
-}
-
-.map-content p {
-    color: var(--gray);
-    font-size: 12px;
-    margin: 8px 0 20px;
+    margin-top: 40px;
 }
 
 
-/* =========================================
-   INSTAGRAM
-========================================= */
-
-.instagram-section {
-    padding: 70px 0;
-    background: var(--red);
-}
-
-.instagram-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.instagram-content > div span {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 3px;
-}
-
-.instagram-content h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 55px;
-    margin: 3px 0;
-}
-
-.instagram-content p {
-    font-size: 12px;
-    opacity: 0.85;
-}
-
-.instagram-button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    color: #111;
-    padding: 17px 25px;
-    font-size: 11px;
-    font-weight: 800;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.instagram-button:hover {
-    transform: translateY(-3px);
-}
-
-
-/* =========================================
+/* ==============================
    FOOTER
-========================================= */
+============================== */
 
-.footer {
-    background: #030405;
-    padding-top: 55px;
+footer {
+    background: #020202;
+
+    border-top: 1px solid #222;
+
+    padding: 60px 8% 25px;
 }
 
-.footer-content {
-    display: flex;
+.footer-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 40px;
+
     align-items: center;
-    justify-content: space-between;
-    padding-bottom: 45px;
 }
 
 .footer-logo {
     display: flex;
+
     flex-direction: column;
+
     line-height: 0.8;
 }
 
 .footer-logo span {
-    font-family: 'Bebas Neue', sans-serif;
-    color: var(--red);
-    font-size: 25px;
+    color: #e50914;
+
+    font-size: 28px;
+
+    font-weight: 900;
 }
 
 .footer-logo strong {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
+    color: #fff;
+
+    font-size: 35px;
+
+    font-weight: 900;
 }
 
-.footer-logo small {
-    color: var(--gold);
+.footer-brand p {
+    color: #b58b35;
+
     font-size: 7px;
-    letter-spacing: 3px;
-    margin-top: 7px;
+
+    letter-spacing: 5px;
+
+    margin-top: 12px;
 }
 
+.footer-links,
 .footer-social {
     display: flex;
-    gap: 10px;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    flex-wrap: wrap;
 }
 
+.footer-links a,
 .footer-social a {
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #252a31;
+    color: #777;
+
+    font-size: 12px;
+
     transition: 0.3s;
 }
 
+.footer-links a:hover,
 .footer-social a:hover {
-    color: var(--gold);
-    border-color: var(--gold);
+    color: #e50914;
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    color: #555b63;
-    font-size: 9px;
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #151515;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    color: #444;
+
+    font-size: 11px;
 }
 
 
-/* =========================================
-   WHATSAPP FLOAT
-========================================= */
+/* ==============================
+   WHATSAPP FLUTUANTE
+============================== */
 
 .whatsapp-float {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 999;
-    height: 55px;
-    padding: 0 19px;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
     display: flex;
+
     align-items: center;
-    gap: 9px;
-    border-radius: 50px;
-    background: #159447;
-    color: white;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
-    font-size: 11px;
-    font-weight: 800;
+    justify-content: center;
+
+    background: #1faa59;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+
+    z-index: 999;
+
     transition: 0.3s;
 }
 
-.whatsapp-float i {
-    font-size: 24px;
-}
-
 .whatsapp-float:hover {
-    transform: translateY(-4px);
-    background: #1db954;
+    transform: scale(1.08);
 }
 
 
-/* =========================================
+/* ==============================
    RESPONSIVO
-========================================= */
+============================== */
 
 @media (max-width: 900px) {
 
-    .menu {
-        position: absolute;
-        top: 82px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        background: #07090c;
-        border-bottom: 1px solid #222;
+    .menu-btn {
+        display: block;
     }
 
-    .menu.active {
+    nav {
+        display: none;
+
+        position: absolute;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #080808;
+
+        border-bottom: 1px solid #222;
+
+        flex-direction: column;
+
+        gap: 22px;
+    }
+
+    nav.active {
         display: flex;
     }
 
-    .menu-mobile {
-        display: block;
+    .nav-agendar {
+        width: 100%;
+
+        text-align: center;
     }
 
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .booking-container {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
     .location-grid {
         grid-template-columns: 1fr;
     }
 
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
-    .nav {
-        height: 72px;
+    .header {
+        height: 70px;
     }
 
-    .menu {
-        top: 72px;
+    nav {
+        top: 70px;
     }
 
     .hero {
-        min-height: 760px;
-        background:
-            linear-gradient(
-                90deg,
-                rgba(2,5,9,0.94),
-                rgba(2,5,9,0.68)
-            ),
-            url("imagens/fachada.jpg") center/cover;
+        min-height: 90vh;
+
+        padding: 120px 25px 70px;
     }
 
     .hero-content {
-        padding-top: 80px;
+        width: 100%;
     }
 
     .hero h1 {
-        font-size: 70px;
+        font-size: 54px;
+
+        letter-spacing: -2px;
     }
 
     .hero p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: stretch;
     }
 
     .hero-buttons .btn {
         width: 100%;
     }
 
-    .hero-info {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 30px;
-    }
-
-    .highlight-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .highlight {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .highlight:last-child {
-        border-bottom: none;
-    }
-
-    .section {
-        padding: 75px 0;
-    }
-
-    .section-title h2 {
-        font-size: 48px;
+    .section,
+    .prices-section,
+    .booking {
+        padding: 80px 20px;
     }
 
     .services-grid {
+        width: 100%;
+
         grid-template-columns: 1fr;
     }
 
-    .price-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .price-box {
+        width: 100%;
+
+        padding: 5px 20px;
     }
 
-    .price-column {
-        padding: 10px 18px;
+    .price-row {
+        padding: 17px 0;
     }
 
-    .gallery {
-        height: 500px;
-        grid-template-columns: 1fr;
+    .price-row span {
+        font-size: 12px;
     }
 
-    .gallery-main {
-        min-height: 300px;
+    .price-row strong {
+        font-size: 13px;
     }
 
-    .gallery-small {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+    .about {
+        gap: 45px;
     }
 
-    .about-image {
-        min-height: 330px;
+    .about-box {
+        min-height: 250px;
     }
 
-    .about-content h2 {
-        font-size: 50px;
+    .about-logo span {
+        font-size: 35px;
     }
 
-    .booking-text h2 {
-        font-size: 55px;
+    .about-logo strong {
+        font-size: 43px;
     }
 
-    .booking-form {
-        padding: 25px 20px;
-    }
-
-    .instagram-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .instagram-content h2 {
-        font-size: 45px;
-    }
-
-    .footer-content {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
+    .location-grid {
+        width: 100%;
     }
 
     .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        padding: 0;
-        justify-content: center;
+        right: 18px;
+        bottom: 18px;
+
+        width: 52px;
+        height: 52px;
     }
 
-    .whatsapp-float span {
-        display: none;
+    .logo span {
+        font-size: 18px;
     }
 
+    .logo strong {
+        font-size: 21px;
+    }
+
+    .logo small {
+        font-size: 5px;
+    }
 }

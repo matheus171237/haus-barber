@@ -1,24 +1,14 @@
-// ==============================
-// MENU MOBILE
-// ==============================
-
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 
 menuBtn.addEventListener("click", () => {
-
     navMenu.classList.toggle("active");
-
 });
 
 
-// ==============================
-// FECHAR MENU AO CLICAR
-// ==============================
+const links = document.querySelectorAll("#navMenu a");
 
-const navLinks = document.querySelectorAll("#navMenu a");
-
-navLinks.forEach(link => {
+links.forEach(link => {
 
     link.addEventListener("click", () => {
 
@@ -29,22 +19,20 @@ navLinks.forEach(link => {
 });
 
 
-// ==============================
-// ANIMAÇÃO AO APARECER
-// ==============================
-
-const elements = document.querySelectorAll(
-    ".service-card, .location-card, .about-content, .about-box, .price-box"
+const cards = document.querySelectorAll(
+    ".service-card, .location-card, .about-box, .price-container"
 );
 
+
 const observer = new IntersectionObserver(
-    (entries) => {
+    entries => {
 
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
-                entry.target.classList.add("show");
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
 
             }
 
@@ -52,39 +40,17 @@ const observer = new IntersectionObserver(
 
     },
     {
-        threshold: 0.15
+        threshold: 0.12
     }
 );
 
 
-elements.forEach(element => {
+cards.forEach(card => {
 
-    element.classList.add("hidden");
+    card.style.opacity = "0";
+    card.style.transform = "translateY(25px)";
+    card.style.transition = "opacity .6s ease, transform .6s ease";
 
-    observer.observe(element);
+    observer.observe(card);
 
 });
-
-
-// ==============================
-// ANIMAÇÃO CSS
-// ==============================
-
-const animationStyle = document.createElement("style");
-
-animationStyle.innerHTML = `
-
-.hidden {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-`;
-
-document.head.appendChild(animationStyle);

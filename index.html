@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Haus Barber - Cortes, barba e estilo no Sol Nascente, Brasília. Agende seu horário pelo WhatsApp.">
 
     <title>Haus Barber | Cortes & Atitude</title>
 
+    <meta name="description"
+        content="Haus Barber - Barbearia no Sol Nascente. Cortes, barba, sobrancelha, pigmentação e muito mais. Agende seu horário pelo WhatsApp.">
+
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-
-    <!-- Ícones -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- ================= NAVBAR ================= -->
 
     <header class="header">
 
@@ -38,7 +34,11 @@
                 <small>CORTES & ATITUDE</small>
             </a>
 
-            <nav class="menu">
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <nav id="navMenu">
 
                 <a href="#inicio">Início</a>
                 <a href="#servicos">Serviços</a>
@@ -46,15 +46,11 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#localizacao">Localização</a>
 
-                <a href="#agendamento" class="menu-button">
+                <a href="#agendar" class="nav-agendar">
                     Agendar
                 </a>
 
             </nav>
-
-            <button class="menu-mobile" id="menuMobile">
-                <i class="fa-solid fa-bars"></i>
-            </button>
 
         </div>
 
@@ -67,111 +63,39 @@
 
         <section class="hero" id="inicio">
 
-            <div class="hero-overlay"></div>
+            <div class="hero-content">
 
-            <div class="container hero-content">
+                <div class="hero-label">
+                    HAUS BARBER
+                </div>
 
-                <div class="hero-text">
+                <h1>
+                    SEU ESTILO.
+                    <span>SUA ATITUDE.</span>
+                </h1>
 
-                    <div class="badge">
-                        <span></span>
-                        BARBEARIA NO SOL NASCENTE
-                    </div>
+                <p>
+                    Mais que um corte, uma identidade.
+                    Na Haus Barber você encontra estilo,
+                    qualidade e atendimento de verdade.
+                </p>
 
-                    <h1>
-                        SEU ESTILO.
-                        <br>
-                        <span>NOSSA ATITUDE.</span>
-                    </h1>
+                <div class="hero-buttons">
 
-                    <p>
-                        Corte, barba e aquele visual que combina
-                        com você.
-                    </p>
+                    <a href="#agendar" class="btn btn-red">
+                        AGENDAR HORÁRIO
+                    </a>
 
-                    <div class="hero-buttons">
-
-                        <a href="#agendamento" class="btn btn-primary">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            AGENDAR HORÁRIO
-                        </a>
-
-                        <a href="#precos" class="btn btn-outline">
-                            VER PREÇOS
-                        </a>
-
-                    </div>
-
-                    <div class="hero-info">
-
-                        <div>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Sol Nascente - DF</span>
-                        </div>
-
-                        <div>
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>(61) 99570-5082</span>
-                        </div>
-
-                    </div>
+                    <a href="#servicos" class="btn btn-outline">
+                        VER SERVIÇOS
+                    </a>
 
                 </div>
 
             </div>
 
             <div class="scroll-down">
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-
-        </section>
-
-
-        <!-- ================= DESTAQUES ================= -->
-
-        <section class="highlights">
-
-            <div class="container highlight-grid">
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        <i class="fa-solid fa-scissors"></i>
-                    </div>
-
-                    <div>
-                        <strong>Cortes</strong>
-                        <span>Do clássico ao moderno</span>
-                    </div>
-
-                </div>
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-
-                    <div>
-                        <strong>Barba</strong>
-                        <span>Acabamento impecável</span>
-                    </div>
-
-                </div>
-
-                <div class="highlight">
-
-                    <div class="highlight-icon">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <div>
-                        <strong>Qualidade</strong>
-                        <span>Atendimento de perto</span>
-                    </div>
-
-                </div>
-
+                ↓
             </div>
 
         </section>
@@ -181,88 +105,98 @@
 
         <section class="section" id="servicos">
 
-            <div class="container">
+            <div class="section-title">
 
-                <div class="section-title">
+                <span>O QUE FAZEMOS</span>
 
-                    <span>O QUE FAZEMOS</span>
+                <h2>
+                    NOSSOS <strong>SERVIÇOS</strong>
+                </h2>
 
-                    <h2>
-                        SERVIÇOS
-                    </h2>
+                <p>
+                    Tudo para deixar seu visual do jeito que você gosta.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">✂</div>
+
+                    <h3>Corte Social</h3>
 
                     <p>
-                        Tudo para você sair da cadeira com o visual em dia.
+                        Corte clássico e elegante para qualquer ocasião.
                     </p>
 
+                    <strong>R$ 20,00</strong>
                 </div>
 
 
-                <div class="services-grid">
+                <div class="service-card featured">
+                    <div class="service-icon">✂</div>
 
-                    <article class="service-card">
+                    <h3>Corte Degradê</h3>
 
-                        <div class="service-number">01</div>
+                    <p>
+                        Degradê feito nos detalhes para um visual moderno.
+                    </p>
 
-                        <i class="fa-solid fa-scissors"></i>
-
-                        <h3>Cortes</h3>
-
-                        <p>
-                            Social, degradê, navalhado e diversos
-                            estilos para você escolher.
-                        </p>
-
-                    </article>
+                    <strong>R$ 25,00</strong>
+                </div>
 
 
-                    <article class="service-card">
+                <div class="service-card">
+                    <div class="service-icon">✂</div>
 
-                        <div class="service-number">02</div>
+                    <h3>Corte Navalhado</h3>
 
-                        <i class="fa-solid fa-user-tie"></i>
+                    <p>
+                        Acabamento preciso e visual marcante.
+                    </p>
 
-                        <h3>Barba</h3>
-
-                        <p>
-                            Modelagem e acabamento para deixar
-                            sua barba alinhada.
-                        </p>
-
-                    </article>
+                    <strong>R$ 25,00</strong>
+                </div>
 
 
-                    <article class="service-card">
+                <div class="service-card">
+                    <div class="service-icon">♨</div>
 
-                        <div class="service-number">03</div>
+                    <h3>Barba</h3>
 
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <p>
+                        Barba alinhada com acabamento profissional.
+                    </p>
 
-                        <h3>Química</h3>
-
-                        <p>
-                            Progressiva, alisante, luzes e
-                            platinado.
-                        </p>
-
-                    </article>
+                    <strong>R$ 20,00</strong>
+                </div>
 
 
-                    <article class="service-card">
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
 
-                        <div class="service-number">04</div>
+                    <h3>Pezinho</h3>
 
-                        <i class="fa-solid fa-eye"></i>
+                    <p>
+                        Acabamento para deixar seu corte sempre em dia.
+                    </p>
 
-                        <h3>Acabamentos</h3>
+                    <strong>R$ 10,00</strong>
+                </div>
 
-                        <p>
-                            Pezinho, sobrancelha e pigmentação
-                            para finalizar o visual.
-                        </p>
 
-                    </article>
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
 
+                    <h3>Sobrancelha</h3>
+
+                    <p>
+                        Design e limpeza para valorizar seu rosto.
+                    </p>
+
+                    <strong>R$ 5,00</strong>
                 </div>
 
             </div>
@@ -272,163 +206,79 @@
 
         <!-- ================= PREÇOS ================= -->
 
-        <section class="section prices-section" id="precos">
+        <section class="prices-section" id="precos">
 
-            <div class="container">
+            <div class="section-title">
 
-                <div class="section-title">
+                <span>TABELA COMPLETA</span>
 
-                    <span>TABELA DE PREÇOS</span>
-
-                    <h2>
-                        ESCOLHA SEU ESTILO
-                    </h2>
-
-                    <p>
-                        Serviços e valores da Haus Barber.
-                    </p>
-
-                </div>
-
-
-                <div class="price-container">
-
-                    <div class="price-column">
-
-                        <div class="price-item">
-                            <span>Corte Social</span>
-                            <strong>R$ 20</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Corte Degradê</span>
-                            <strong>R$ 25</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Corte Navalhado</span>
-                            <strong>R$ 25</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Barba</span>
-                            <strong>R$ 20</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Pezinho</span>
-                            <strong>R$ 10</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Sobrancelha</span>
-                            <strong>R$ 5</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="price-column">
-
-                        <div class="price-item">
-                            <span>Pigmentação</span>
-                            <strong>R$ 20</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Progressiva Avulsa</span>
-                            <strong>R$ 50</strong>
-                        </div>
-
-                        <div class="price-item featured">
-                            <span>Progressiva + Corte</span>
-                            <strong>R$ 70</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Graxa (Alisante)</span>
-                            <strong>R$ 20</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Luzes + Corte</span>
-                            <strong>R$ 110</strong>
-                        </div>
-
-                        <div class="price-item featured">
-                            <span>Platinado + Corte</span>
-                            <strong>R$ 140</strong>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="price-button">
-
-                    <a href="#agendamento" class="btn btn-primary">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        AGENDAR PELO WHATSAPP
-                    </a>
-
-                </div>
+                <h2>
+                    NOSSOS <strong>PREÇOS</strong>
+                </h2>
 
             </div>
 
-        </section>
 
+            <div class="price-box">
 
-        <!-- ================= GALERIA ================= -->
-
-        <section class="section gallery-section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span>CONHEÇA A HAUS</span>
-
-                    <h2>
-                        NOSSO ESPAÇO
-                    </h2>
-
-                    <p>
-                        Um espaço pensado para você.
-                    </p>
-
+                <div class="price-row">
+                    <span>Corte Social</span>
+                    <strong>R$ 20,00</strong>
                 </div>
 
+                <div class="price-row">
+                    <span>Corte Degradê</span>
+                    <strong>R$ 25,00</strong>
+                </div>
 
-                <div class="gallery">
+                <div class="price-row">
+                    <span>Corte Navalhado</span>
+                    <strong>R$ 25,00</strong>
+                </div>
 
-                    <div class="gallery-main">
+                <div class="price-row">
+                    <span>Barba</span>
+                    <strong>R$ 20,00</strong>
+                </div>
 
-                        <img src="imagens/fachada.jpg"
-                            alt="Interior da Haus Barber">
+                <div class="price-row">
+                    <span>Pezinho</span>
+                    <strong>R$ 10,00</strong>
+                </div>
 
-                        <div class="gallery-label">
-                            <span>HAUS</span>
-                            <strong>BARBER</strong>
-                        </div>
+                <div class="price-row">
+                    <span>Sobrancelha</span>
+                    <strong>R$ 5,00</strong>
+                </div>
 
-                    </div>
+                <div class="price-row">
+                    <span>Pigmentação</span>
+                    <strong>R$ 20,00</strong>
+                </div>
 
+                <div class="price-row">
+                    <span>Progressiva Avulsa</span>
+                    <strong>R$ 50,00</strong>
+                </div>
 
-                    <div class="gallery-small">
+                <div class="price-row">
+                    <span>Progressiva + Corte</span>
+                    <strong>R$ 70,00</strong>
+                </div>
 
-                        <div>
-                            <img src="imagens/precos.jpg"
-                                alt="Tabela de preços Haus Barber">
-                        </div>
+                <div class="price-row">
+                    <span>Graxa (Alisante)</span>
+                    <strong>R$ 20,00</strong>
+                </div>
 
-                        <div>
-                            <img src="imagens/agenda.jpg"
-                                alt="Agenda Haus Barber">
-                        </div>
+                <div class="price-row">
+                    <span>Luzes + Corte</span>
+                    <strong>R$ 110,00</strong>
+                </div>
 
-                    </div>
-
+                <div class="price-row">
+                    <span>Platinado + Corte</span>
+                    <strong>R$ 140,00</strong>
                 </div>
 
             </div>
@@ -438,71 +288,48 @@
 
         <!-- ================= SOBRE ================= -->
 
-        <section class="section about-section" id="sobre">
+        <section class="about section" id="sobre">
 
-            <div class="container about-grid">
+            <div class="about-content">
 
-                <div class="about-image">
+                <span class="section-label">
+                    SOBRE A HAUS
+                </span>
 
-                    <div class="about-image-box">
+                <h2>
+                    MAIS QUE UM CORTE.
+                    <span>UMA ATITUDE.</span>
+                </h2>
 
-                        <span>HAUS</span>
-                        <strong>BARBER</strong>
+                <p>
+                    A Haus Barber nasceu com o objetivo de oferecer
+                    um atendimento de qualidade, ambiente confortável
+                    e cortes que combinam com o estilo de cada cliente.
+                </p>
 
-                        <small>
-                            CORTES & ATITUDE
-                        </small>
+                <p>
+                    Somos uma barbearia nova no Sol Nascente,
+                    construída com dedicação e vontade de fazer
+                    cada cliente sair satisfeito.
+                </p>
 
-                    </div>
+                <a href="#agendar" class="btn btn-red">
+                    QUERO AGENDAR
+                </a>
 
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="about-logo">
+                    <span>HAUS</span>
+                    <strong>BARBER</strong>
                 </div>
 
-
-                <div class="about-content">
-
-                    <span class="section-mini-title">
-                        SOBRE A HAUS
-                    </span>
-
-                    <h2>
-                        MAIS QUE UM CORTE.
-                        <br>
-                        <span>UMA IDENTIDADE.</span>
-                    </h2>
-
-                    <p>
-                        A Haus Barber nasceu com uma proposta simples:
-                        oferecer um espaço onde você possa cuidar do
-                        visual, trocar aquela ideia e sair satisfeito.
-                    </p>
-
-                    <p>
-                        Do corte clássico ao estilo mais moderno,
-                        nossa missão é entregar um atendimento
-                        próximo e um resultado que combine com você.
-                    </p>
-
-
-                    <div class="about-features">
-
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            <span>Atendimento próximo</span>
-                        </div>
-
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            <span>Preços acessíveis</span>
-                        </div>
-
-                        <div>
-                            <i class="fa-solid fa-check"></i>
-                            <span>Ambiente confortável</span>
-                        </div>
-
-                    </div>
-
-                </div>
+                <p>
+                    CORTES & ATITUDE
+                </p>
 
             </div>
 
@@ -511,143 +338,33 @@
 
         <!-- ================= AGENDAMENTO ================= -->
 
-        <section class="booking-section" id="agendamento">
+        <section class="booking" id="agendar">
 
-            <div class="container booking-container">
+            <div class="booking-content">
 
-                <div class="booking-text">
+                <span>
+                    HORÁRIO MARCADO
+                </span>
 
-                    <span>
-                        NÃO DEIXE PARA DEPOIS
-                    </span>
+                <h2>
+                    SEU PRÓXIMO CORTE
+                    <strong>COMEÇA AQUI.</strong>
+                </h2>
 
-                    <h2>
-                        SEU PRÓXIMO CORTE
-                        <br>
-                        <strong>COMEÇA AQUI.</strong>
-                    </h2>
+                <p>
+                    Entre em contato pelo WhatsApp e escolha
+                    o melhor horário para você.
+                </p>
 
-                    <p>
-                        Escolha o serviço e envie sua solicitação
-                        pelo WhatsApp.
-                    </p>
+                <a
+                    href="https://wa.me/5561995705082?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20na%20Haus%20Barber."
+                    target="_blank"
+                    class="btn btn-whatsapp">
 
-                </div>
+                    <span>◉</span>
+                    AGENDAR PELO WHATSAPP
 
-
-                <form class="booking-form" id="bookingForm">
-
-                    <label for="nome">
-                        Seu nome
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nome"
-                        placeholder="Digite seu nome"
-                        required
-                    >
-
-
-                    <label for="servico">
-                        Serviço
-                    </label>
-
-                    <select id="servico" required>
-
-                        <option value="">
-                            Escolha um serviço
-                        </option>
-
-                        <option value="Corte Social - R$ 20">
-                            Corte Social — R$ 20
-                        </option>
-
-                        <option value="Corte Degradê - R$ 25">
-                            Corte Degradê — R$ 25
-                        </option>
-
-                        <option value="Corte Navalhado - R$ 25">
-                            Corte Navalhado — R$ 25
-                        </option>
-
-                        <option value="Barba - R$ 20">
-                            Barba — R$ 20
-                        </option>
-
-                        <option value="Pezinho - R$ 10">
-                            Pezinho — R$ 10
-                        </option>
-
-                        <option value="Sobrancelha - R$ 5">
-                            Sobrancelha — R$ 5
-                        </option>
-
-                        <option value="Pigmentação - R$ 20">
-                            Pigmentação — R$ 20
-                        </option>
-
-                        <option value="Progressiva Avulsa - R$ 50">
-                            Progressiva Avulsa — R$ 50
-                        </option>
-
-                        <option value="Progressiva + Corte - R$ 70">
-                            Progressiva + Corte — R$ 70
-                        </option>
-
-                        <option value="Graxa (Alisante) - R$ 20">
-                            Graxa (Alisante) — R$ 20
-                        </option>
-
-                        <option value="Luzes + Corte - R$ 110">
-                            Luzes + Corte — R$ 110
-                        </option>
-
-                        <option value="Platinado + Corte - R$ 140">
-                            Platinado + Corte — R$ 140
-                        </option>
-
-                    </select>
-
-
-                    <label for="data">
-                        Data desejada
-                    </label>
-
-                    <input
-                        type="date"
-                        id="data"
-                        required
-                    >
-
-
-                    <label for="horario">
-                        Horário desejado
-                    </label>
-
-                    <input
-                        type="time"
-                        id="horario"
-                        required
-                    >
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-whatsapp"
-                    >
-
-                        <i class="fa-brands fa-whatsapp"></i>
-
-                        SOLICITAR AGENDAMENTO
-
-                    </button>
-
-                    <small>
-                        O horário será confirmado pelo WhatsApp.
-                    </small>
-
-                </form>
+                </a>
 
             </div>
 
@@ -656,172 +373,93 @@
 
         <!-- ================= LOCALIZAÇÃO ================= -->
 
-        <section class="section location-section" id="localizacao">
+        <section class="location section" id="localizacao">
 
-            <div class="container">
+            <div class="section-title">
 
-                <div class="section-title">
+                <span>ONDE ESTAMOS</span>
 
-                    <span>ONDE ESTAMOS</span>
+                <h2>
+                    VENHA NOS <strong>VISITAR</strong>
+                </h2>
 
-                    <h2>
-                        ENCONTRE A HAUS
-                    </h2>
+            </div>
+
+
+            <div class="location-grid">
+
+                <div class="location-card">
+
+                    <div class="location-icon">
+                        📍
+                    </div>
+
+                    <h3>Localização</h3>
+
+                    <p>
+                        Chácara 128, Conjunto A,
+                        Lote 18 - Condomínio Vitória
+                    </p>
+
+                    <small>
+                        Sol Nascente - Brasília/DF
+                    </small>
 
                 </div>
 
 
-                <div class="location-grid">
+                <div class="location-card">
 
-                    <div class="location-card">
-
-                        <div class="location-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>Endereço</h3>
-
-                            <p>
-                                Chácara 128, Conjunto A,
-                                Lote 18
-                                <br>
-                                Condomínio Vitória
-                                <br>
-                                Sol Nascente - DF
-                            </p>
-
-                            <small>
-                                Referência: ao lado do Móveis Usados
-                            </small>
-
-                        </div>
-
+                    <div class="location-icon">
+                        🕐
                     </div>
 
+                    <h3>Horário</h3>
 
-                    <div class="location-card">
+                    <p>
+                        Segunda a sábado
+                    </p>
 
-                        <div class="location-icon">
-                            <i class="fa-regular fa-clock"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>Atendimento</h3>
-
-                            <p>
-                                Sexta-feira
-                                <br>
-                                12:00 às 20:00
-                            </p>
-
-                            <small>
-                                Para outros dias, consulte pelo WhatsApp.
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="location-card">
-
-                        <div class="location-icon">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-
-                        <div>
-
-                            <h3>WhatsApp</h3>
-
-                            <p>
-                                (61) 99570-5082
-                            </p>
-
-                            <a
-                                href="https://wa.me/5561995705082"
-                                target="_blank"
-                                class="location-link"
-                            >
-                                Falar agora
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
+                    <strong>
+                        12:00 às 20:00
+                    </strong>
 
                 </div>
 
 
-                <div class="map-box">
+                <div class="location-card">
 
-                    <div class="map-content">
-
-                        <i class="fa-solid fa-location-dot"></i>
-
-                        <h3>
-                            HAUS BARBER
-                        </h3>
-
-                        <p>
-                            Chácara 128, Conjunto A,
-                            Lote 18 — Condomínio Vitória
-                        </p>
-
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A1cara%20128%20Conjunto%20A%20Lote%2018%20Condom%C3%ADnio%20Vit%C3%B3ria%20Sol%20Nascente%20DF"
-                            target="_blank"
-                            class="btn btn-primary"
-                        >
-                            <i class="fa-solid fa-map-location-dot"></i>
-                            ABRIR NO GOOGLE MAPS
-                        </a>
-
+                    <div class="location-icon">
+                        📱
                     </div>
+
+                    <h3>Contato</h3>
+
+                    <p>
+                        (61) 99570-5082
+                    </p>
+
+                    <a
+                        href="https://wa.me/5561995705082"
+                        target="_blank">
+
+                        Falar no WhatsApp →
+
+                    </a>
 
                 </div>
 
             </div>
 
-        </section>
 
-
-        <!-- ================= INSTAGRAM ================= -->
-
-        <section class="instagram-section">
-
-            <div class="container instagram-content">
-
-                <div>
-
-                    <span>
-                        ACOMPANHE A HAUS
-                    </span>
-
-                    <h2>
-                        @hausbarber_
-                    </h2>
-
-                    <p>
-                        Confira nossos trabalhos, novidades
-                        e horários disponíveis.
-                    </p>
-
-                </div>
-
+            <div class="map-button">
 
                 <a
-                    href="https://www.instagram.com/hausbarber_/"
+                    href="https://www.google.com/maps/search/?api=1&query=Ch%C3%A1cara+128+Conjunto+A+Lote+18+Condom%C3%ADnio+Vit%C3%B3ria+Sol+Nascente+Bras%C3%ADlia+DF"
                     target="_blank"
-                    class="instagram-button"
-                >
+                    class="btn btn-outline">
 
-                    <i class="fa-brands fa-instagram"></i>
-
-                    VER INSTAGRAM
+                    📍 ABRIR LOCALIZAÇÃO NO GOOGLE MAPS
 
                 </a>
 
@@ -834,18 +472,30 @@
 
     <!-- ================= FOOTER ================= -->
 
-    <footer class="footer">
+    <footer>
 
-        <div class="container footer-content">
+        <div class="footer-container">
 
-            <div class="footer-logo">
+            <div class="footer-brand">
 
-                <span>HAUS</span>
-                <strong>BARBER</strong>
+                <div class="footer-logo">
+                    <span>HAUS</span>
+                    <strong>BARBER</strong>
+                </div>
 
-                <small>
+                <p>
                     CORTES & ATITUDE
-                </small>
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#inicio">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#precos">Preços</a>
+                <a href="#localizacao">Localização</a>
 
             </div>
 
@@ -854,18 +504,18 @@
 
                 <a
                     href="https://www.instagram.com/hausbarber_/"
-                    target="_blank"
-                    aria-label="Instagram"
-                >
-                    <i class="fa-brands fa-instagram"></i>
+                    target="_blank">
+
+                    Instagram
+
                 </a>
 
                 <a
                     href="https://wa.me/5561995705082"
-                    target="_blank"
-                    aria-label="WhatsApp"
-                >
-                    <i class="fa-brands fa-whatsapp"></i>
+                    target="_blank">
+
+                    WhatsApp
+
                 </a>
 
             </div>
@@ -873,35 +523,24 @@
         </div>
 
 
-        <div class="footer-bottom">
+        <div class="copyright">
 
-            <p>
-                © 2026 Haus Barber. Todos os direitos reservados.
-            </p>
-
-            <p>
-                Desenvolvido com atitude.
-            </p>
+            © 2026 Haus Barber. Todos os direitos reservados.
 
         </div>
 
     </footer>
 
 
-    <!-- ================= WHATSAPP FLUTUANTE ================= -->
+    <!-- BOTÃO WHATSAPP -->
 
     <a
-        href="https://wa.me/5561995705082?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Haus%20Barber%20e%20quero%20agendar%20um%20hor%C3%A1rio."
+        href="https://wa.me/5561995705082?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20na%20Haus%20Barber."
         target="_blank"
         class="whatsapp-float"
-        aria-label="Falar pelo WhatsApp"
-    >
+        aria-label="Agendar pelo WhatsApp">
 
-        <i class="fa-brands fa-whatsapp"></i>
-
-        <span>
-            Agendar
-        </span>
+        ☎
 
     </a>
 
@@ -909,4 +548,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

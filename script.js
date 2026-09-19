@@ -1,125 +1,90 @@
-/* =========================================
-   HAUS BARBER
-   SCRIPT.JS
-========================================= */
+// ==============================
+// MENU MOBILE
+// ==============================
 
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 
-/* =========================================
-   MENU MOBILE
-========================================= */
+menuBtn.addEventListener("click", () => {
 
-const menuMobile = document.getElementById("menuMobile");
-const menu = document.querySelector(".menu");
-
-menuMobile.addEventListener("click", () => {
-
-    menu.classList.toggle("active");
-
-    const icon = menuMobile.querySelector("i");
-
-    if (menu.classList.contains("active")) {
-
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
-
-    } else {
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
-    }
+    navMenu.classList.toggle("active");
 
 });
 
 
-/* =========================================
-   FECHAR MENU AO CLICAR
-========================================= */
+// ==============================
+// FECHAR MENU AO CLICAR
+// ==============================
 
-document.querySelectorAll(".menu a").forEach(link => {
+const navLinks = document.querySelectorAll("#navMenu a");
+
+navLinks.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        menu.classList.remove("active");
-
-        const icon = menuMobile.querySelector("i");
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+        navMenu.classList.remove("active");
 
     });
 
 });
 
 
-/* =========================================
-   AGENDAMENTO WHATSAPP
-========================================= */
+// ==============================
+// ANIMAÇÃO AO APARECER
+// ==============================
 
-const bookingForm = document.getElementById("bookingForm");
+const elements = document.querySelectorAll(
+    ".service-card, .location-card, .about-content, .about-box, .price-box"
+);
 
-bookingForm.addEventListener("submit", function(event) {
+const observer = new IntersectionObserver(
+    (entries) => {
 
-    event.preventDefault();
+        entries.forEach(entry => {
 
-    const nome = document.getElementById("nome").value;
+            if (entry.isIntersecting) {
 
-    const servico = document.getElementById("servico").value;
+                entry.target.classList.add("show");
 
-    const data = document.getElementById("data").value;
+            }
 
-    const horario = document.getElementById("horario").value;
+        });
 
-
-    if (!nome || !servico || !data || !horario) {
-
-        alert("Preencha todos os campos.");
-
-        return;
-
+    },
+    {
+        threshold: 0.15
     }
+);
 
 
-    const dataFormatada = new Date(data + "T00:00:00")
-        .toLocaleDateString("pt-BR");
+elements.forEach(element => {
 
+    element.classList.add("hidden");
 
-    const mensagem =
-        `Olá! Vim pelo site da Haus Barber.%0A%0A` +
-
-        `👤 Nome: ${nome}%0A` +
-
-        `✂️ Serviço: ${servico}%0A` +
-
-        `📅 Data desejada: ${dataFormatada}%0A` +
-
-        `🕐 Horário desejado: ${horario}%0A%0A` +
-
-        `Gostaria de confirmar a disponibilidade do horário.`;
-
-
-
-    const whatsapp =
-        `https://wa.me/5561995705082?text=${mensagem}`;
-
-
-    window.open(whatsapp, "_blank");
+    observer.observe(element);
 
 });
 
 
-/* =========================================
-   IMPEDIR DATAS PASSADAS
-========================================= */
+// ==============================
+// ANIMAÇÃO CSS
+// ==============================
 
-const dateInput = document.getElementById("data");
+const animationStyle = document.createElement("style");
 
-const hoje = new Date();
+animationStyle.innerHTML = `
 
-const ano = hoje.getFullYear();
+.hidden {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
 
-const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-const dia = String(hoje.getDate()).padStart(2, "0");
+`;
 
-dateInput.min = `${ano}-${mes}-${dia}`;
+document.head.appendChild(animationStyle);
